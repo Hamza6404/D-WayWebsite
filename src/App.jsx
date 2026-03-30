@@ -249,7 +249,7 @@ function FocusCard({ card, index }) {
 
 function SkiVideoFrame() {
   return (
-    <div className="mx-auto mt-6 w-full max-w-[760px]">
+    <div className="mx-auto mt-4 w-full max-w-[520px] md:mt-6 md:max-w-[760px]">
       <video
         src="/DWAYSKI.mp4"
         autoPlay
@@ -278,14 +278,22 @@ export default function App() {
   return (
     <div className="min-h-screen overflow-x-hidden bg-[#f8f2e8] text-[#22170f]">
       <header className="fixed left-0 right-0 top-0 z-50 border-b border-white/10 bg-[#0f172a] text-[#f8f2e8] shadow-[0_10px_30px_rgba(0,0,0,0.25)]">
-        <div className="mx-auto flex max-w-7xl items-center justify-between gap-4 px-4 py-5 md:px-8">
-          <a href="/" className="inline-flex items-center">
-            <img
-              src="/images/TRANSPRNCY_1.png"
-              alt="D-Way logo"
-              className="h-12 w-auto md:h-16"
-            />
-          </a>
+        <div className="mx-auto flex max-w-7xl flex-col gap-3 px-4 py-4 md:flex-row md:items-center md:justify-between md:gap-4 md:px-8 md:py-5">
+          <div className="flex items-center justify-between">
+            <a href="/" className="inline-flex items-center">
+              <img
+                src="/images/TRANSPRNCY_1.png"
+                alt="D-Way logo"
+                className="h-10 w-auto md:h-16"
+              />
+            </a>
+
+            <nav className="flex items-center gap-3 text-[10px] font-bold uppercase tracking-[0.12em] text-[#f8f2e8] md:hidden">
+              <a href="#about" className="hover:opacity-60">About</a>
+              <a href="#impact" className="hover:opacity-60">Impact</a>
+              <a href="#contact" className="hover:opacity-60">Contact</a>
+            </nav>
+          </div>
 
           <nav className="hidden items-center gap-6 text-sm font-bold uppercase tracking-[0.2em] text-[#f8f2e8] md:flex">
             <a href="#about" className="hover:opacity-60">About</a>
@@ -304,7 +312,7 @@ export default function App() {
         />
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(255,255,255,0.04),transparent_45%)]" />
 
-        <div className="relative z-10 mx-auto flex min-h-screen max-w-7xl items-center justify-center px-4 pb-12 pt-24 md:px-8">
+        <div className="relative z-10 mx-auto flex min-h-screen max-w-7xl items-center justify-center px-4 pb-12 pt-28 md:px-8 md:pt-24">
           <motion.div
             animate={{ y: [0, -18, 0], scale: [1, 1.02, 1] }}
             transition={{ duration: 5.5, repeat: Infinity, ease: 'easeInOut' }}
@@ -335,8 +343,8 @@ export default function App() {
       <SmoothWave topColor="#22170f" bottomColor="#f8f2e8" accent="#f72ea4" />
 
       <section id="top" className="relative min-h-[92vh] overflow-hidden bg-[#f8f2e8] text-[#22170f]">
-        <div className="mx-auto flex min-h-[92vh] max-w-7xl flex-col justify-end px-4 pb-16 pt-28 md:px-8 md:pb-20">
-          <div className="grid items-center gap-12 lg:grid-cols-[1.05fr_0.95fr]">
+        <div className="mx-auto flex min-h-[92vh] max-w-7xl flex-col justify-end px-4 pb-16 pt-40 md:px-8 md:pb-20 md:pt-28">
+          <div className="grid items-center gap-10 md:gap-12 lg:grid-cols-[1.05fr_0.95fr]">
             <div className="max-w-3xl">
               <motion.div
                 initial={{ opacity: 0, y: 24 }}
@@ -352,7 +360,7 @@ export default function App() {
                 initial={{ opacity: 0, y: 24 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8, delay: 0.1 }}
-                className="mt-6 text-[4rem] font-black uppercase leading-[0.88] sm:text-[5.2rem] md:text-[6.1rem] lg:text-[6.6rem]"
+                className="mt-6 text-[3.1rem] font-black uppercase leading-[0.88] sm:text-[5.2rem] md:text-[6.1rem] lg:text-[6.6rem]"
                 style={{ fontFamily: 'Comic Sans MS, Marker Felt, Chalkboard SE, cursive' }}
               >
                 Built By
@@ -364,7 +372,7 @@ export default function App() {
                 initial={{ opacity: 0, y: 24 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8, delay: 0.2 }}
-                className="mt-6 max-w-2xl text-[1.05rem] leading-8 md:text-[1.18rem]"
+                className="mt-6 max-w-2xl text-[1rem] leading-8 md:text-[1.18rem]"
                 style={bodyFont}
               >
                 D-Way creates programming for young people in underserved inner city communities. Through mentorship, wellness, creativity, leadership, and real opportunities, we build spaces where youth can feel supported, connected, and pushed to grow.
@@ -420,7 +428,7 @@ export default function App() {
               </motion.div>
             </div>
 
-            <div className="relative min-h-[420px] md:min-h-[500px]">
+            <div className="relative min-h-[320px] md:min-h-[500px]">
               <motion.div
                 initial={{ opacity: 0, y: 30, rotate: -2 }}
                 animate={{ opacity: 1, y: 0, rotate: -2 }}
@@ -470,12 +478,12 @@ export default function App() {
               key={i}
               className={`shrink-0 overflow-hidden rounded-[2rem] ${
                 i % 4 === 0
-                  ? 'h-[280px] w-[260px] md:h-[420px] md:w-[340px]'
+                  ? 'h-[280px] w-[220px] md:h-[420px] md:w-[340px]'
                   : i % 4 === 1
-                    ? 'h-[280px] w-[240px] md:h-[420px] md:w-[300px]'
+                    ? 'h-[280px] w-[200px] md:h-[420px] md:w-[300px]'
                     : i % 4 === 2
-                      ? 'h-[280px] w-[280px] md:h-[420px] md:w-[360px]'
-                      : 'h-[280px] w-[230px] md:h-[420px] md:w-[280px]'
+                      ? 'h-[280px] w-[240px] md:h-[420px] md:w-[360px]'
+                      : 'h-[280px] w-[190px] md:h-[420px] md:w-[280px]'
               }`}
               style={bgImageStyle(src, 'top')}
             />
@@ -539,7 +547,7 @@ export default function App() {
               </div>
 
               <div className="sm:col-span-2 overflow-hidden rounded-[2.5rem] shadow-[0_20px_65px_rgba(0,0,0,0.14)]">
-                <div className="h-[360px] w-full" style={bgImageStyle('/images/group-photo10.jpg', 'center')} />
+                <div className="h-[300px] md:h-[360px] w-full" style={bgImageStyle('/images/group-photo10.jpg', 'center')} />
               </div>
             </div>
           </div>
@@ -571,7 +579,7 @@ export default function App() {
             </p>
           </div>
 
-          <div className="mt-14 grid gap-6 md:grid-cols-4">
+          <div className="mt-14 grid grid-cols-1 gap-6 sm:grid-cols-2 md:grid-cols-4">
             <div className="rounded-[2.2rem] bg-[#1e2457] p-8 text-[#f8f2e8] shadow-[0_20px_50px_rgba(0,0,0,0.12)]">
               <p className="text-5xl font-black">200+</p>
               <p className="mt-3 text-sm font-bold uppercase tracking-[0.16em] text-[#f0b526]">
@@ -619,7 +627,7 @@ export default function App() {
                   and pride could all live in the same room.
                 </p>
 
-                <div className="mt-8 grid grid-cols-3 gap-4">
+                <div className="mt-8 grid grid-cols-1 gap-4 sm:grid-cols-3">
                   <div className="rounded-[1.6rem] bg-white p-5 shadow-[0_12px_30px_rgba(0,0,0,0.08)]">
                     <p className="text-3xl font-black">160+</p>
                     <p className="mt-2 text-xs font-bold uppercase tracking-[0.16em] text-[#d94b32]">
@@ -642,19 +650,19 @@ export default function App() {
               </div>
 
               <div className="grid grid-cols-2 gap-0 overflow-hidden rounded-[2.2rem] shadow-[0_25px_70px_rgba(0,0,0,0.12)]">
-                <div className="aspect-[4/5]" style={bgImageStyle('/images/still1.jpg', 'center')} />
-                <div className="aspect-[4/5]" style={bgImageStyle('/images/group-photo3.jpg', 'center')} />
-                <div className="aspect-[4/5]" style={bgImageStyle('/images/still6.jpg', 'center')} />
-                <div className="aspect-[4/5]" style={bgImageStyle('/images/solo8.jpg', 'center')} />
+                <div className="aspect-[3/4] md:aspect-[4/5]" style={bgImageStyle('/images/still1.jpg', 'center')} />
+                <div className="aspect-[3/4] md:aspect-[4/5]" style={bgImageStyle('/images/group-photo3.jpg', 'center')} />
+                <div className="aspect-[3/4] md:aspect-[4/5]" style={bgImageStyle('/images/still6.jpg', 'center')} />
+                <div className="aspect-[3/4] md:aspect-[4/5]" style={bgImageStyle('/images/solo8.jpg', 'center')} />
               </div>
             </div>
 
             <div className="grid gap-8 lg:grid-cols-[1.05fr_0.95fr] lg:items-start">
               <div className="order-2 grid grid-cols-2 gap-0 overflow-hidden rounded-[2.2rem] shadow-[0_25px_70px_rgba(0,0,0,0.12)] lg:order-1">
-                <div className="aspect-[4/5]" style={bgImageStyle('/images/solo2.jpg', 'center')} />
-                <div className="aspect-[4/5]" style={bgImageStyle('/images/solo3.jpg', 'center')} />
-                <div className="aspect-[4/5]" style={bgImageStyle('/images/group-photo8.jpg', 'center')} />
-                <div className="aspect-[4/5]" style={bgImageStyle('/images/duo10.jpg', 'center')} />
+                <div className="aspect-[3/4] md:aspect-[4/5]" style={bgImageStyle('/images/solo2.jpg', 'center')} />
+                <div className="aspect-[3/4] md:aspect-[4/5]" style={bgImageStyle('/images/solo3.jpg', 'center')} />
+                <div className="aspect-[3/4] md:aspect-[4/5]" style={bgImageStyle('/images/group-photo8.jpg', 'center')} />
+                <div className="aspect-[3/4] md:aspect-[4/5]" style={bgImageStyle('/images/duo10.jpg', 'center')} />
               </div>
 
               <div className="order-1 lg:order-2">
@@ -673,7 +681,7 @@ export default function App() {
                   and community happened at the same time.
                 </p>
 
-                <div className="mt-8 grid grid-cols-3 gap-4">
+                <div className="mt-8 grid grid-cols-1 gap-4 sm:grid-cols-3">
                   <div className="rounded-[1.6rem] bg-white p-5 shadow-[0_12px_30px_rgba(0,0,0,0.08)]">
                     <p className="text-3xl font-black">Weekly</p>
                     <p className="mt-2 text-xs font-bold uppercase tracking-[0.16em] text-[#d94b32]">
@@ -714,7 +722,7 @@ export default function App() {
                   and build confidence through a shared experience that felt exciting, memorable, and different from everyday life.
                 </p>
 
-                <div className="mt-8 grid grid-cols-3 gap-4">
+                <div className="mt-8 grid grid-cols-1 gap-4 sm:grid-cols-3">
                   <div className="rounded-[1.6rem] bg-white p-5 shadow-[0_12px_30px_rgba(0,0,0,0.08)]">
                     <p className="text-3xl font-black">Annual</p>
                     <p className="mt-2 text-xs font-bold uppercase tracking-[0.16em] text-[#d94b32]">
@@ -760,7 +768,7 @@ export default function App() {
                   expression, creativity, and confidence in a different way.
                 </p>
 
-                <div className="mt-8 grid grid-cols-3 gap-4">
+                <div className="mt-8 grid grid-cols-1 gap-4 sm:grid-cols-3">
                   <div className="rounded-[1.6rem] bg-white p-5 shadow-[0_12px_30px_rgba(0,0,0,0.08)]">
                     <p className="text-3xl font-black">Multiple</p>
                     <p className="mt-2 text-xs font-bold uppercase tracking-[0.16em] text-[#d94b32]">
@@ -844,7 +852,7 @@ export default function App() {
               </div>
 
               <p className="max-w-2xl text-[1.05rem] leading-8 text-[#f8f2e8]/80" style={bodyFont}>
-              Faces, stories, and moments that show the people at the heart of D-Way.
+                Faces, stories, and moments that show the people at the heart of D-Way.
               </p>
             </div>
           </div>
